@@ -1,0 +1,58 @@
+{% include 'header.html' %}
+	<section id="content">
+				<ul class="column">
+				    <!--eqblock-->
+				    <li>
+				        <section class="block">
+<script>
+	function loadData(){
+IN.API.Profile("me")
+   .result(function(result) { 
+   	text="<script type='IN/FullMemberProfile' data-id='" + result.values[0].id + "'>";
+   	text+="<//script>"
+      $("#profile").html(text);
+      IN.parse(document.getElementById("profile"))
+   })
+   }
+
+</script>
+
+							
+<script type="in/Login" data-onAuth="loadData">
+Hello, <?js= firstName ?> <?js= lastName ?>.
+
+</script>
+<div id="profile"></div>
+				        </section>
+				    </li>
+
+				    <!--eqblock-->
+				    <li>
+				        <section class="block">
+									<a href="#"><img src="{{ STATIC_URL }}images/2-thumb.jpg" alt=""  /></a> 
+										<h2><a href="#">Cadru didactic</a></h2> 
+										<p>Poti gasi companii interesate de proiecte de cercetare comune ce vor fi realizate in cadrul unor lucrari de diploma</p> 
+				        </section>
+				    </li>
+
+				    <!--eqblock-->
+				    <li>
+				        <section class="block">
+									<a href="#"><img src="{{ STATIC_URL }}images/3-thumb.jpg" alt=""  /></a> 
+										<h2><a href="#">Student</a></h2> 
+										<p>Lucrarea ta de diploma/dizertatie poate fi realizata sub indrumare mixta, facultate-companie. </p> 
+				        </section>
+				    </li>
+
+				    <!--eqblock-->
+				    <li>
+				        <section class="block">
+									<a href="#"><img src="{{ STATIC_URL }}images/4-thumb.jpg" alt=""  /></a> 
+										<h2><a href="#">Vizitator</a></h2> 
+										<p>Afla mai multe detalii despre cine suntem, ce ne propunem, ce lucrari realizam 
+				        </section>
+				    </li>
+
+				   
+		</section>
+{% include 'footer.html' %}
